@@ -1,0 +1,173 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/*-------------------CRUD CSS CODES--------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 50vh;
+    background-color: #f4f4f4;
+}
+
+.container-nav {
+    position: relative;
+    margin-left: -280px;
+}
+
+.navbar {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    display: flex;
+    margin-left: -10px;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+}
+
+/* Logo styles */
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+        .logo img {
+            height: 60px;
+        }
+}
+
+.create-container {
+    border-radius: 40px;
+    width: 70%;
+    margin: auto;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 300px;
+    word-wrap: break-word;
+    border-radius: 10px;
+    background-clip: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.half-triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 100vh solid transparent;
+    border-right: 100vw solid #78c6e6;
+    position: absolute;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container-header {
+    background-color: #15bdff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 33px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.thead-header {
+    color: #fff;
+    background-color: #15bdff;
+}
+
+
+.btn-formgroup {
+    margin-top: 3%;
+    margin-left: 73%;
+}
+
+.create-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+
+    padding: 5px;
+    background-color: #15bdff;
+    color: white;
+}
+
+    .create-btn:hover {
+        background-color: #2d7794;
+        color: #fff;
+    
+    }
+
+.back-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    background-color: #848484;
+    color: white;
+}
+
+    .back-btn:hover {
+        background-color: #5e5e5e;
+        color: #fff;
+    }
+
+.index-buttons button {
+    display:inline-block;
+}
+
+
+.index-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: #504d4d;
+    text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.add-employee {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    width: 120px;
+    background-color: #848484;
+}
+
+    .add-employee:hover {
+        background-color: white;
+        color: #848484;
+    }
+
+.buttton-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn {
+    border: none;
+}
+

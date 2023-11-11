@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<title>Profile Card UI Design</title>-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/index.css">
+
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+          rel="stylesheet" />
+</head>
+<body>
+    <header class="container-nav">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../images/MvpLogo.png" alt="logo">
+        </div>
+    </nav>
+    </header>
+    <div class="half-triangle-left"></div>
+    <div class="wrapper">
+        <div class="profile-card">
+            <div class="image">
+                <img src="../images/database-icon.png" alt="" class="profile-img" />
+            </div>
+
+            <div class="text-data">
+                <span class="head">CRUD Dashboard</span>
+                <span class="sub-text">Welcome</span>
+            </div>
+
+            <div class="buttons">
+                @Html.ActionLink("Confirm", "Index", "Employee", null, new { @class = "button" })
+            </div>
+
+
+        </div>
+        <div class="profile-card">
+            <div class="image">
+                 <img src="../images/logout-icon.png" alt="" class="profile-img" />
+            </div>
+
+            <div class="text-data">
+                <span class="head">Logout</span>
+                <span class="sub-text">Goodbye</span>
+            </div>
+            <div class="buttons">
+                @Html.ActionLink("Signout", "AdminLogin", "Home", null, new { @class = "button" })
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+

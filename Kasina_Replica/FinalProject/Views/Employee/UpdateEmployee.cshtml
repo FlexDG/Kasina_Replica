@@ -1,0 +1,146 @@
+﻿@model FinalProject.Models.Employee
+
+@{
+    ViewData["Title"] = "Update Employee";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> MVP | Edit Employee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b2ce28006a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/crud.css">
+
+</head>
+<body>
+    <header class="container-nav">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://i.ibb.co/gZrWZcs/MvpLogo.png" alt="MvpLogo" border="0">
+            </div>
+        </nav>
+    </header>
+
+    <div class="half-triangle-left"></div>
+ 
+
+    <div class="card  create-container crud-table">
+        <div class="card-header container-header" style="border-radius:10px; margin:0;">
+            <h3 class="text-uppercase">Edit Employe Details</h3>
+        </div>
+
+    <div class="card-body">
+            <br>
+        <form asp-action="UpdateEmployee" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+                <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input type="email" asp-for="EmailAddress" class="form-control" />
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="MobileNumber" class="control-label"></label>
+                            <input asp-for="MobileNumber" class="form-control" />
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+             <br>
+             <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="DesignationId" class="control-label"></label>
+            
+            @Html.DropDownListFor(model => model.DesignationId, ViewBag.DesignationList as SelectList, new { @class = "form-control" })
+            <span asp-validation-for="DesignationId" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+             <br>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-sm create-btn" data-bs-toggle="modal" data-bs-target="#confirmModal" />
+                <a asp-action="Index" class="btn btn-sm back-btn">Back to List</a>
+            </div>
+        </form>
+</div>
+        </div>
+
+
+<div id="confirmModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Confirm Changes</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to save the changes?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="confirmChangesBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(document).ready(function() {
+       
+                $('form').submit(function(event) {
+                   
+                    event.preventDefault();
+
+                 
+                    $('#confirmModal').modal('show');
+                });
+
+              
+                $('#confirmChangesBtn').click(function() {
+          
+                    $('form').off('submit').submit();
+                });
+            });
+        </script>
+}

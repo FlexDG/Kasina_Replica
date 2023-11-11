@@ -1,0 +1,198 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: 50vh;
+    background-color: #f4f4f4;
+}
+
+.container-nav {
+    position: relative;
+    margin-left: -290px;
+}
+
+
+.navbar {
+    position: absolute;
+    margin-top: -13.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+}
+
+/* Logo styles */
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+        .logo img {
+            height: 60px;
+        }
+}
+
+/* Center the modal vertically and horizontally */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Set the width of the modal */
+.modal-dialog-centered {
+    max-width: 400px;
+}
+
+/* Add a custom background color to the modal */
+.modal-content {
+    background-color: #f8f9fa;
+}
+
+/* crud index */
+
+.half-triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 100vh solid transparent;
+    border-right: 100vw solid #78c6e6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.wrapper {
+    position: relative;
+    margin-top: 225px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 190px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+    .profile-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-out;
+        transform: scale(1.1);
+    }
+
+
+
+    .profile-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 36%;
+        width: 100%;
+        border-radius: 24px 24px 0 0;
+        background-color: #15bdff;
+    }
+
+.image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    background-color: #40c5fa;
+    padding: 3px;
+    margin-bottom: 30px;
+}
+
+    .image .profile-img {
+        position: relative;
+        height: 75%;
+        width: 65%;
+        margin-top: 15px;
+    }
+
+.profile-card .text-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    margin-top: 25px;
+}
+
+.text-data .head {
+    font-size: 31px;
+    font-weight: 600;
+    color: #0a5877;
+    text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.text-data .sub-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: #838080;
+}
+
+.profile-card .buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 65px;
+    margin-bottom: 35px;
+}
+
+.buttons .button {
+    color: #fff;
+    font-size: 18px;
+    text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 24px;
+    margin: 0 10px;
+    height: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    width: 150px;
+    padding: 8px 24px;
+    background-color: #15bdff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    .buttons .button:hover {
+        background-color: #2d7794;
+    }

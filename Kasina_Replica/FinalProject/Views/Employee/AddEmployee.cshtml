@@ -1,0 +1,107 @@
+﻿@model FinalProject.Models.Employee
+
+@{
+    ViewData["Title"] = "New Employee";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> MVP | Add Employee</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b2ce28006a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/crud.css">
+    
+</head>
+<body>
+    <header class="container-nav">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../images/MvpLogo.png" alt="logo">
+            </div>
+        </nav>
+    </header>
+    <div class="half-triangle-left"></div>
+
+
+  
+<div class="card create-container crud-table">
+    <div class="card-header container-header" style="border-radius:10px; margin:0;">
+        <h3 class="text-uppercase container-header">Add New Employee </h3>
+    </div>
+    <div class="card-body">
+          <br>
+        <form asp-action="AddEmployee" enctype="multipart/form-data">
+
+           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                            <label asp-for="EmailAddress" class="control-label"></label>
+                            <input type="email" asp-for="EmailAddress" class="form-control" />
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                </div>
+                  <br>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="MobileNumber" class="control-label"></label>
+                            <input asp-for="MobileNumber" class="form-control" />
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+                <br>
+        <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="DesignationId" class="control-label"></label>
+            
+            @Html.DropDownListFor(model => model.DesignationId, ViewBag.DesignationList as SelectList, new { @class = "form-control" })
+            <span asp-validation-for="DesignationId" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+            <div class="form-group btn-formgroup">
+                <input type="submit" value="Create" class="btn btn-sm create-btn" />
+                <a asp-action="Index" class="btn btn-sm back-btn">Back to List</a>
+            </div>
+
+
+        </form>
+  
+</div>
+</div>
+
+</body>
+</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

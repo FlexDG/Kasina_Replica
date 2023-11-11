@@ -1,0 +1,72 @@
+﻿@model FinalProject.Models.AdminLoginViewModel
+@{
+    ViewBag.Title = "Admin Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/adminlogin.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-nav">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../images/MvpLogo.png" alt="logo">
+            </div>
+        </nav>
+    </header>
+
+    <div class="half-triangle-left"></div>
+
+    <div class="wrapper">
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form", @id = "login-form"}))
+        {
+            @Html.AntiForgeryToken()
+
+            <h2>ADMIN</h2>
+
+            <div class="row">
+                <i class="fas fa-user"></i>
+                @Html.TextBoxFor(m => m.Username, new { placeholder = "Enter Username", @id = "username" })
+            </div>
+
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Enter Password", @id = "password" })
+            </div>
+
+            <input type="submit" name="" id="submit" value="SIGN IN">
+            <a href="#"> Forgot Password?</a>
+        }
+
+        <div class="side">
+            <img src="../images/mvp-careers.png" alt="career">
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            document.getElementById("login-form").addEventListener("submit", function (event) {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username === "mvpadmin" && password === "123") {
+                    return;
+                } else {
+                    alert("Login failed. Please try again.");
+                    event.preventDefault();
+                }
+            });
+        </script>
+    }
+</body>
+</html>
